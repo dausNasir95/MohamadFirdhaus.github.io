@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV - Senior Software Developer</title>
+    <title>Firdhaus - Senior Software Developer</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <style>
         html {
         scroll-behavior: smooth;
+        }
+
+        .navbar-expand-lg.scrolled {
+        background-color: rgb(230,230,230) !important;
+        color: white;
+        transition: background-color 200ms linear;
         }
         body {
             font-family: Arial, sans-serif;
         }
+        
         .profile-img {
             border-radius: 50%;
             width: 150px;
@@ -23,16 +35,30 @@
             font-size: 1.5rem;
             color: #333;
         }
+        .section-subtitle {
+            margin-top: 15px;
+            font-size: 1.3rem;
+            color: #413c3c;
+        }
     </style>
+    <script>
+        $(function () {
+        $(document).scroll(function () {
+            var $nav = $(".navbar-expand-lg");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+    </script>
 </head>
 <body>
 
     <!-- Header Section -->
+    
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#Profile">Profile</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <div class="container ps-2">
+          <a class="navbar-brand rounded-circle bg-dark p-1 text-white" href="#Profile">MF</a>
+          <button class="navbar-toggler"type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -55,10 +81,32 @@
           </div>
         </div>
       </nav>
+      <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>    
+            </ul>
+          </div>
+        </div>
+      </nav> -->
     <header id="Profile" class="bg-dark text-white text-center py-5">
+ 
         <div class="container">
             <img src="profile.jpg" alt="Profile Photo" class="profile-img">
-            <h1 class="display-4 mt-3">Mohamad Firdhaus Bin Nasir</h1>
+            <h3 class="display-4 mt-3">Mohamad Firdhaus Bin Nasir</h3>
             
             <p class="lead">• Senior Software Developer | • Full-Stack Developer</p>
         </div>
@@ -78,24 +126,28 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="Experience"  class="bg-light py-5">
-        <div class="container">
+    <section id="Experience"  class="py-3" style="background-color: lightgray;margin-left: 10%;margin-right: 10%;">
+        <div class="container" >
             <h2 class="section-title">Experience</h2>
-            <div class="card mb-4">
+            <div class="card mb-4" style="border-radius: 10px;box-shadow: 2px 2px gray">
                 <div class="card-body">
                     <h5 class="card-title">Senior Software Developer</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Infinite Technology - 2018 to Present</h6>
                     <p class="card-text">
                         Lead software development projects and integration efforts. Design and implement scalable software architectures using C++, C#, and other languages. Collaborate with cross-functional teams to deliver high-quality software and mentor junior developers.
+                        Worked on developing software solutions, integrating APIs, and optimizing performance using ASP.NET, Java, and HTML. Collaborated with teams to implement new features and ensure smooth deployment processes.
                     </p>
                 </div>
             </div>
             <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Software Developer</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Company Name - 2012 to 2016</h6>
+                <div class="card-body" style="border-radius: 10px;box-shadow: 2px 2px gray">
+                    <h5 class="card-title">Programmer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Yoshiden(M) Sdn. Bhd - 2016 to 2018</h6>
                     <p class="card-text">
-                        Worked on developing software solutions, integrating APIs, and optimizing performance using ASP.NET, Java, and HTML. Collaborated with teams to implement new features and ensure smooth deployment processes.
+                        Developed an automation software solution for our client,
+Debugging and maintaining our system (PLC, PC Based software).
+Managing Site schedule, implementation, suggestion and troubleshooting.
+Planning the factory system integration with our software.
                     </p>
                 </div>
             </div>
@@ -103,33 +155,76 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="Skills" class="container my-5">
+    <section id="Skills" class="container my-5 ">
         <h2 class="section-title">Skills</h2>
+        <h5 class="section-subtitle">PC/Windows Based Application & Website.</h5>
         <div class="row">
             <div class="col-md-6">
                 <ul>
                     <li>C++, C#, VB, ASP.NET</li>
                     <li>Java, HTML, CSS</li>
+                    <li>MSSQL, MYSQL, SQLite, Oracle and Google Firebird Engine.</li>
                     <li>Integration Software Development</li>
                     <li>Data Structures and Algorithms</li>
+                    <li>Website Development</li>
+                    <li>Windows Application Development</li>
                 </ul>
             </div>
             <div class="col-md-6">
                 <ul>
+                    <li>Websocket Development & intergration</li>
+                    <li>OpenCV Library for Image Processing</li>
+                    <li>Vision Camera Inspection System</li>
                     <li>API Integration</li>
                     <li>Software Architecture Design</li>
                     <li>CI/CD Pipelines</li>
-                    <li>Mentorship & Team Leadership</li>
+                    <!-- <li>Mentorship & Team Leadership</li> -->
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h6 class="section-subtitle">PLC Based, Micro Controller & IoT.</h6>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li>Ladder Diagram & Mnemonic code</li>
+                    <li>Modbus TCP & Modbus RTU</li>
+                    <li>Electronic and wiring diagram</li>
+                    <li>MQTT intergration</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Logic Control and algorithms</li>
+                    <li>Automation Control and workflow</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h6 class="section-subtitle">Android , IOS , Universal Windows Platform (UWP) Linux Based.</h6>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li>Experience on Building an Adroid App in Android Studio and Visual Studio/li>
+                    <li>Intergrate Mobile App with Client API</li>
+                    <li>Designing UI/UX</li>
+                    <li>Familiar with Raspberry Pie - Ubuntu/Debian Linux OS</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Building an universal app in XAMARIN form</li>
+                    <li>Experience in IOS Application Development</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="Education" class="bg-light py-1">
+    <section id="Education" class="py-1" style="background-color: lightgray;margin-left: 10%;margin-right: 10%;">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="card mb-4">
+            <div class="card mb-4" style="border-radius: 10px;box-shadow: 2px 2px gray">
                 <div class="card-body">
                     <h5 class="card-title">Diploma in Mechatronic Industry</h5>
                     <h6 class="card-subtitle mb-2 text-muted">KOLEJ KEMAHIRAN TINGGI MARA - Graduated in 2016</h6>
@@ -150,10 +245,10 @@
         </div>
     </section>
      <!-- Education Section -->
-    <section id="Contact" class="bg-light py-1">
+    <section id="Contact" class="py-1">
         <div class="container">
             <h2 class="section-title">Contact Info</h2>
-            <div class="card mb-4">
+            <div class="card mb-4" style="border-radius: 10px;box-shadow: 2px 2px lightgray">
                 <div class="card-body">
             <ul class="list-unstyled">
                 <li><strong>Email:</strong> dausnasir95@gmail.com</li>
@@ -171,8 +266,5 @@
             <p>&copy; 2024 dausnasir95.github.io. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
